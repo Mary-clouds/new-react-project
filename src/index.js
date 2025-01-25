@@ -1,14 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import {StrictMode} from 'react';
+import { createRoot} from "react-dom/client";
+//import ReactDOM from 'react-dom/client';
 import './index.css';
 import "bootstrap/dist/css/bootstrap.css";
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
+//import * as serviceWorker from './serviceWorker';
+//ReactDOM.render(<App/>, document.getElementById('root'));
+//serviceWorker.unregister();
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
 
-serviceWorker.unregister();
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
 //const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(
   //<React.StrictMode>

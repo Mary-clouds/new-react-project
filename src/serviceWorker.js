@@ -75,7 +75,7 @@ function checkValidServiceWorker(swUrl, config){
             response.status === 404 ||
             (contentType != null && contentType.indexOf('javascript') === -1)
         ){
-            navifator.serviceWorker.ready.then(registration =>{
+            navigator.serviceWorker.ready.then(registration =>{
                 registration.unregister().then(()=>{
                     window.location.reload();
                 });
