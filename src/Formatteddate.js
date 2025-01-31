@@ -1,6 +1,13 @@
 import React from "react";
 
 export default function FormattedDate(props){
+    //check if date is valid
+    if(!(props.date instanceof Date) || isNaN(props.date)){
+        console.error("Invalid date:", props.date);
+        //Fallback message if the date is invalid
+        return <div>Invalid date</div>;
+    }
+    
     let days = [
         "Sunday",
         "Monday",
