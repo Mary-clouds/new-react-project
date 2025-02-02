@@ -7,6 +7,7 @@ import "./Weatherapp.css";
 export default function Weather(props){
     const [weatherData, setWeatherData] = useState({ready:false});
     const[city, setCity] = useState(props.defaultCity);
+    console.log("Weather Data:", weatherData);
    //function to handle API response
     function handleResponse(response){
         setWeatherData({
@@ -14,9 +15,9 @@ export default function Weather(props){
             coordinates: response.data.coordinates,
             temperature: response.data.temperature.current,
             humidity: response.data.temperature.humidity,
-            date:  console.log("Date object:", new Date(response.data.dt * 1000)),
+            date:   new Date(response.data.time * 1000),
             description: response.data.condition.description,
-            iconUrl:response.data.condition.icon,
+            iconUrl:response.data.condition.icon_url,
             wind:response.data.wind.speed,
             city:`${response.data.city}, ${response.data.country}`,
 
